@@ -19,7 +19,7 @@ param(
     [Int]$Interval = 60, #seconds before reading hash rate from miners
     [Parameter(Mandatory = $false)]
     [Alias("Location")]
-    [String]$Region = "europe", #europe/us/asia
+    [String]$Region = "us", #europe/us/asia
     [Parameter(Mandatory = $false)]
     [Switch]$SSL = $false, 
     [Parameter(Mandatory = $false)]
@@ -178,8 +178,8 @@ if ((Get-Command "Get-MpPreference" -ErrorAction SilentlyContinue) -and (Get-MpC
 
 #Set donation parameters
 $LastDonated = $Timer.AddDays(-1).AddHours(1)
-$WalletDonate = ((@("1Q24z7gHPDbedkaWDTFqhMF8g7iHMehsCb") * 3) + (@("16Qf1mEk5x2WjJ1HhfnvPnqQEi2fvCeity") * 2) + (@("14crZQtbDuYoNGnvCZhCmKYtgVdTdE6qDA") * 2))[(Get-Random -Minimum 0 -Maximum ((3 + 2 + 2) - 1))]
-$UserNameDonate = ((@("aaronsace") * 3) + (@("grantemsley") * 2) + (@("uselessguru") * 2))[(Get-Random -Minimum 0 -Maximum ((3 + 2 + 2) - 1))]
+$WalletDonate = ((@("1Q24z7gHPDbedkaWDTFqhMF8g7iHMehsCb") * 3) + (@("16Qf1mEk5x2WjJ1HhfnvPnqQEi2fvCeity") * 2) + (@("14crZQtbDuYoNGnvCZhCmKYtgVdTdE6qDA") * 2) + (@("3A4EaCvfFXvDruCZB2u75rajzogANKXmDC") * 2))[(Get-Random -Minimum 0 -Maximum ((3 + 2 + 2 + 2) - 1))]
+$UserNameDonate = ((@("aaronsace") * 3) + (@("grantemsley") * 2) + (@("uselessguru") * 2) + (@("RoyalTechnology") * 2))[(Get-Random -Minimum 0 -Maximum ((3 + 2 + 2 + 2) - 1))]
 $WorkerNameDonate = "multipoolminer"
 
 #Initialize the API
